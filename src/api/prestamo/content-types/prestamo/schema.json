@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "prestamos",
+  "info": {
+    "singularName": "prestamo",
+    "pluralName": "prestamos",
+    "displayName": "prestamo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "andDate": {
+      "type": "datetime",
+      "required": true
+    },
+    "state": {
+      "type": "enumeration",
+      "enum": [
+        "activo",
+        "expirado",
+        "finalizado"
+      ],
+      "required": true
+    },
+    "activos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::activo.activo",
+      "mappedBy": "prestamo"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "prestamos"
+    }
+  }
+}

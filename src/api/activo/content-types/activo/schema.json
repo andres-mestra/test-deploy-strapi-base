@@ -48,6 +48,30 @@
       ],
       "type": "media",
       "multiple": true
+    },
+    "location": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::location.location",
+      "inversedBy": "activos"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::category.category",
+      "inversedBy": "activos"
+    },
+    "rubro": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rubro.rubro",
+      "inversedBy": "activos"
+    },
+    "prestamo": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::prestamo.prestamo",
+      "inversedBy": "activos"
     }
   }
 }
